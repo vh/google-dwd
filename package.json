@@ -1,0 +1,28 @@
+{
+  "name": "google-dwd",
+  "version": "0.1.0",
+  "description": "Google Domain Wide Delegation Client",
+  "author": "Vadim Homchik",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@googleapis/iam": "^3.0.1",
+    "gaxios": "^5.0.1",
+    "google-auth-library": "^8.1.1"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "google",
+    "dwd",
+    "client"
+  ],
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vh/google-dwd.git"
+  },
+  "license": "Apache-2.0"
+}
