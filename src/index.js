@@ -15,10 +15,13 @@ module.exports = async (client, subject, scopes) => {
   let iss;
   if (client instanceof JWT) {
     iss = client.email;
-  } else if (client instanceof Compute) {
-    iss = client.serviceAccountEmail;
   } else if (client instanceof Impersonated) {
     iss = client.targetPrincipal;
+  } else if (client instanceof Compute) {
+    const response = await request({ url: 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email', method: 'GET',
+      headers: { 'Metadata-Flavor': 'Google' } });
+
+    iss = response.data;
   }
 
   if (iss) {
@@ -51,11 +54,9 @@ module.exports = async (client, subject, scopes) => {
 
     const assertion = `${iamPayload}.${data.signature.replace(/=*$/, '')}`;
 
-    const headers = { 'content-type': 'application/x-www-form-urlencoded' };
-    
     const body = new URLSearchParams({ assertion, grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer' }).toString();
 
-    const response = await request({ url: TOKEN_ENDPOINT, method: 'POST', headers, body });
+    const response = await request({ url: TOKEN_ENDPOINT, method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
 
     const newCredentials = new OAuth2Client();
     newCredentials.setCredentials({ access_token: response.data.access_token });
