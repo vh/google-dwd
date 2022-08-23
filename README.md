@@ -1,5 +1,10 @@
 # google-dwd
-Google Domain Wide Delegation Client.
+> Google Domain Wide Delegation Client
+
+## Install
+```
+npm install google-dwd
+```
 
 ## Usage
 ```js
