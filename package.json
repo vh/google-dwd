@@ -1,6 +1,6 @@
 {
   "name": "google-dwd",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Google Domain Wide Delegation Client",
   "repository": "vh/google-dwd",
   "license": "Apache-2.0",
@@ -9,9 +9,9 @@
   "types": "index.d.ts",
   "exports": "./index.js",
   "dependencies": {
-    "@googleapis/iam": "^4.0.0",
-    "gaxios": "^5.0.2",
-    "google-auth-library": "^8.6.0"
+    "@googleapis/iam": "^6.0.0",
+    "gaxios": "^5.1.0",
+    "google-auth-library": "^8.7.0"
   },
   "engines": {
     "node": ">=12"
