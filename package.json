@@ -9,7 +9,7 @@
   "types": "index.d.ts",
   "exports": "./index.js",
   "dependencies": {
-    "@googleapis/iam": "^10.0.0",
+    "@googleapis/iam": "^11.0.0",
     "gaxios": "^6.0.0",
     "google-auth-library": "^8.9.0"
   },
