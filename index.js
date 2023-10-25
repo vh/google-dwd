@@ -19,7 +19,7 @@ module.exports = async (client, subject, scopes) => {
     iss = client.targetPrincipal;
   } else if (client instanceof Compute) {
     const response = await request({ url: 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email', method: 'GET',
-      headers: { 'Metadata-Flavor': 'Google' } });
+      headers: { 'Metadata-Flavor': 'Google' }, responseType: 'text' });
 
     iss = response.data;
   }
