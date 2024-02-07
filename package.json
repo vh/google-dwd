@@ -12,7 +12,7 @@
     "gaxios": "^6.2.0"
   },
   "peerDependencies": {
-    "google-auth-library": "^9.4.1"
+    "google-auth-library": "^9.6.2"
   },
   "engines": {
     "node": ">=14"
