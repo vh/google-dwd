@@ -8,7 +8,7 @@
   "types": "index.d.ts",
   "exports": "./index.js",
   "dependencies": {
-    "@googleapis/iam": "^17.0.0",
+    "@googleapis/iam": "^18.1.0",
     "gaxios": "^6.5.0"
   },
   "peerDependencies": {
