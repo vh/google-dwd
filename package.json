@@ -9,7 +9,7 @@
   "exports": "./index.js",
   "dependencies": {
     "@googleapis/iam": "^28.0.1",
-    "gaxios": "^6.7.1"
+    "gaxios": "^7.1.1"
   },
   "peerDependencies": {
     "google-auth-library": "^9.6.2"
